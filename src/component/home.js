@@ -18,32 +18,26 @@ class Home extends React.Component {
         return (
             <Layout className='home-g'>
                 <Header className="header">
-                    <div className="logo" >
-                        <img src={require("./img/logo.png")} alt="" />
-                    </div>
-                    <div>
+                    <div className='head'>
+                        <img src={require("./img/logo.png")} alt="" /> 
                         <h1>考研管理平台</h1>
                     </div>
-                    <div>
-                        <div><Avatar shape="square" size={64} icon="user" /></div>
+                    <div className='user'>
+                        <div className='headscul'>
+                           <Avatar shape="square" size={45} icon="user" className='he-logo'/>  
+                           <span className='username'>cjm</span>
+                        </div>
                         <div>退出</div>
                     </div>
                 </Header>
                 <Layout>
                     <Sider width={200} style={{ background: '#fff' }}>
-
-                        {/* <div className="logo" >
-                            <img src={require("./img/logo.png")} alt="" />
-                        </div> */}
-
                         <Menu
                             mode="inline"
                             defaultSelectedKeys={['1']}
                             defaultOpenKeys={['sub1']}
                             style={{ height: '100%', borderRight: 0 }}
                         >
-
-
                             <SubMenu key="sub1" title={<span><Icon type="bar-chart" />统计</span>}>
                                 <Menu.Item key="1">用户分析</Menu.Item>
                                 <Menu.Item key="2">内容分析</Menu.Item>

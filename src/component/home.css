@@ -3,6 +3,7 @@ html,body{
 }
 .header{
     display: flex;
+    align-items: center;
     justify-content: space-between;
     background:white;
     padding: 0;
@@ -13,10 +14,33 @@ html,body{
 .logo{
     margin: 0 auto;
     width: 150px;
-    height: 150px;
+    height: 45px;
 }
+.user{
+    display: flex;
 
+}
 .logo img {
     width: 100%;
     height: 100%;
+}
+.head{
+    display:flex;
+    align-items: center;
+}
+.head h1{
+    margin-left: 10px;
+    line-height: 50px;
+}
+.head img{
+    widows: 50px;
+    height: 50px;
+}
+.he-logo{
+    margin-right: 5px;
+}
+.username{
+    color: blue;
+    font-weight: bold;
+    margin-right: 10px
 }
