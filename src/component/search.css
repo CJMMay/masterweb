@@ -1,0 +1,33 @@
+.search-global{
+    margin:20px auto;
+    border:1px solid #e0e0e0; 
+}
+.search-head{
+    height: 40px;
+    line-height: 40px;
+    background: #A3AEF4;
+    color: white;
+    padding-left: 20px;
+}
+.search-content{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.search-input{
+    width: 300px;
+}
+.search-page{
+    margin: auto 5px;
+}
+.showNum{
+    margin: auto 10px;
+}
+.search-right{
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+}
+.search-but{
+    margin: auto 40px;
+}

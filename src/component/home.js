@@ -1,18 +1,13 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import './home.css'
-import { Redirect } from "react-router-dom";
 import { Layout, Menu, Icon, Avatar } from 'antd';
-import { Logo } from './img/logo.png'
-
+// import UserAna from './userAnalysis.js'
+import ContAna from './content-analysis.js'
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
 
     render() {
         return (
@@ -58,6 +53,8 @@ class Home extends React.Component {
                         <Content style={{
                             background: '#fff', padding: 24, margin: 0, minHeight: 280,
                         }}>
+                            
+                            <ContAna />
                         </Content>
                     </Layout>
                 </Layout>

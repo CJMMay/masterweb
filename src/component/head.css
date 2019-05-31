@@ -1,0 +1,9 @@
+.content-head{
+    font-size: 16px;
+    height: 40px;
+    border-bottom: 2px solid #E0E0E0;
+    margin-bottom: 15px;
+}
+.head-name{
+    line-height: 40px;
+}

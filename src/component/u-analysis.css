@@ -1,0 +1,13 @@
+.data-table{
+    margin-top: 20px;
+
+}
+.tableName{
+    height: 50px;
+    line-height: 50px;
+    background: #E0E0E0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+}
