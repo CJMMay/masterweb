@@ -7,7 +7,7 @@ class Search extends React.Component {
             <div className='search-global'>
                 <div className='search-head'>搜索条件</div>
                 <div className='search-content'>
-                    <Input placeholder="输入手机号查找" className='search-input'/>
+                    <Input placeholder="" className='search-input'/>
                     <div className='search-right'>
                         <span className='search-page'>每页显示</span>
                         <InputNumber min={1} max={10} defaultValue={5} onChange='' className='showNum'/>

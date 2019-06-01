@@ -1,0 +1,30 @@
+.userimg{
+    width:50px;
+    height: 50px;
+}
+.userHead{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #1890ff;
+    border-bottom: 2px solid #e0e0ee;
+}
+.fix{
+    color: green;
+}
+.delete{
+    color: red;
+}
+.userBtns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+}
+.pdf{
+    color: red;
+    margin-right: 10px;
+}

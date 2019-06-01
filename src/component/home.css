@@ -36,11 +36,11 @@ html,body{
     widows: 50px;
     height: 50px;
 }
-.he-logo{
-    margin-right: 5px;
+.headscul{
+    margin-right: 10px;
 }
 .username{
-    color: blue;
+    color: rgb(141, 141, 245);
     font-weight: bold;
     margin-right: 10px
 }

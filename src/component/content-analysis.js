@@ -1,7 +1,5 @@
 import React from 'react';
 import Data from './data1.js'
-import Search from './search.js'
-import UserManage from './user-manage.js';
 class ContAna extends React.Component {
     constructor(props) {
         super(props)
@@ -63,8 +61,6 @@ render() {
                     <Data title={item.title} subtitle={item.subtitle} list={item.list} key={index} />
                 )
             })}
-            <Search />
-            <UserManage />
         </div>
     )
 }

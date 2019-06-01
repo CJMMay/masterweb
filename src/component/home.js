@@ -2,8 +2,11 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import './home.css'
 import { Layout, Menu, Icon, Avatar } from 'antd';
-// import UserAna from './userAnalysis.js'
+import UserAna from './userAnalysis.js'
 import ContAna from './content-analysis.js'
+import Usermanage from './user-manage.js'
+import FileManage from './file-manage.js'
+import MessageEdit from './message-edit.js';
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
@@ -14,13 +17,13 @@ class Home extends React.Component {
             <Layout className='home-g'>
                 <Header className="header">
                     <div className='head'>
-                        <img src={require("./img/logo.png")} alt="" /> 
+                        <img src={require("./img/logo_final.png")} alt="" />
                         <h1>考研管理平台</h1>
                     </div>
                     <div className='user'>
                         <div className='headscul'>
-                           <Avatar shape="square" size={45} icon="user" className='he-logo'/>  
-                           <span className='username'>cjm</span>
+                            <Avatar src={require('./img/manageuser.jpeg')} size="large" className='he-logo' />
+                            <span className='username'>cjm</span>
                         </div>
                         <div>退出</div>
                     </div>
@@ -53,8 +56,11 @@ class Home extends React.Component {
                         <Content style={{
                             background: '#fff', padding: 24, margin: 0, minHeight: 280,
                         }}>
-                            
+                            <UserAna />
                             <ContAna />
+                            <Usermanage />
+                            <FileManage />
+                            <MessageEdit />
                         </Content>
                     </Layout>
                 </Layout>

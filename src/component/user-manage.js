@@ -1,14 +1,24 @@
 import React from 'react';
-import { Table,Divider} from 'antd'
+import { Table, Divider, Button } from 'antd'
+import './user-manage.css'
+import Search from './search.js'
 class UserManage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             columns: [
                 {
+                    title: '用户头像',
+                    dataIndex: 'userimg',
+                    key: 'userimg',
+                    render: () => <img src={require("./img/userimg.jpg")} alt="" className='userimg' />
+                },
+                {
                     title: '用户名',
                     dataIndex: 'username',
                     key: 'username',
+                    sorter: (a, b) => a.username.length - b.username.length,
+                    sortDirections: ['descend'],
                     render: text => <a href="javascript:;">{text}</a>,
                 },
                 {
@@ -20,6 +30,8 @@ class UserManage extends React.Component {
                     title: '帖子条数',
                     dataIndex: 'post_num',
                     key: 'post_num',
+                    defaultSortOrder: 'descend',
+                    sorter: (a, b) => a.post_num - b.post_num,
                 }, {
                     title: '注册时间',
                     dataIndex: 'register_time',
@@ -36,16 +48,16 @@ class UserManage extends React.Component {
                     key: 'operation',
                     render: () => (
                         <span>
-                            <a href="javascript:;">修改信息</a>
+                            <a href="javascript:;" className='fix'>修改信息</a>
                             <Divider type="vertical" />
-                            <a href="javascript:;">删除</a>
+                            <a href="javascript:;" className='delete'>删除</a>
                         </span>)
                 },
-
             ],
             data: [
                 {
                     key: '1',
+                    // userimg:"./img/userimg.jpg",
                     username: 'chenjiaemi',
                     telephone: '15990020548',
                     post_num: 30,
@@ -54,27 +66,49 @@ class UserManage extends React.Component {
                 },
                 {
                     key: '2',
-                   
-                    username: 'chenjiaemi',
+                    // userimg:"./img/userimg.jpg",
+                    username: 'xuweiy',
                     telephone: '15990020548',
-                    post_num: 30,
+                    post_num: 0,
                     register_time: '2019-1-1',
                     personal: '这个人很懒，没有个性签名',
                 },
                 {
                     key: '3',
-                    username: 'chenjiaemi',
+                    // userimg:"./img/userimg.jpg",
+                    username: 'zhangzhuohui',
                     telephone: '15990020548',
-                    post_num: 30,
+                    post_num: 15,
                     register_time: '2019-1-1',
                     personal: '这个人很懒，没有个性签名',
-                },]
+                },],
         }
     }
     render() {
+        const rowSelection = {
+            onChange: (selectedRowKeys, selectedRows) => {
+                console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+            },
+            getCheckboxProps: record => ({
+                disabled: record.name === 'Disabled User', // Column configuration not to be checked
+                name: record.name,
+            }),
+        };
         return (
             <div>
-                <Table columns={this.state.columns} dataSource={this.state.data} />
+                <Search />
+                <div className='userHead'>
+                    <div>
+                        用户列表
+                    </div>
+                    <div className='userBtns'>
+                        <Button type="primary" icon="download" size={30}>导出</Button>
+                        <Button type="primary" icon="plus-circle" className='adduser'>添加</Button>
+                        <Button type="danger" size={30}> 重置</Button>
+
+                    </div>
+                </div>
+                <Table rowSelection={rowSelection} columns={this.state.columns} dataSource={this.state.data} />
             </div>
         )
     }
