@@ -1,9 +1,14 @@
 import React from 'react';
-import Home from './component/home'
+import { HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+import Login from './component/login';
+import Home from './component/home';
 function App() {
   return (
-  <Home />
+    <Router>
+      <Route path="/"  exact component={Login} />
+      <Route path="/Home"  component={Home} />
+  </Router>
   );
 }
 

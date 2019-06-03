@@ -1,0 +1,17 @@
+
+.clockHead{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #1890ff;
+    border-bottom: 2px solid #e0e0ee;
+}
+
+.delete{
+    color: red;
+    cursor: pointer;
+}
+

@@ -14,9 +14,11 @@
 }
 .fix{
     color: green;
+    cursor: pointer;
 }
 .delete{
     color: red;
+    cursor: pointer;
 }
 .userBtns{
     display: flex;

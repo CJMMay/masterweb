@@ -1,11 +1,63 @@
 import React from 'react';
-import { Table, Divider, Button } from 'antd'
-import './user-manage.css'
-import Search from './search.js'
+import { Table, Divider, Button,Modal } from 'antd'
+import './user-manage.css';
+import Search from './search.js';
+import AddUser from './modals/add-user.js';
+
+const confirm = Modal.confirm;
+function showUpdateConfirm() {
+    confirm({
+      title: '你想要修改信息吗?',
+      content: 'Some descriptions',
+      onOk() {
+        console.log('OK');
+      },
+      onCancel() {
+        console.log('Cancel');
+      },
+    });
+  }
+  
+  function showDeleteConfirm() {
+    confirm({
+      title: '你想要删除此用户吗?',
+      content: 'Some descriptions',
+      okText: 'Yes',
+      okType: 'danger',
+      cancelText: 'No',
+      onOk() {
+        console.log('OK');
+      },
+      onCancel() {
+        console.log('Cancel');
+      },
+    });
+  }
+  
+  function showExportConfirm() {
+    confirm({
+      title: '你想要导出这些用户吗?',
+      content: 'Some descriptions',
+      okText: 'Yes',
+      okType: 'danger',
+      okButtonProps: {
+        disabled: true,
+      },
+      cancelText: 'No',
+      onOk() {
+        console.log('OK');
+      },
+      onCancel() {
+        console.log('Cancel');
+      },
+    });
+  }
+  
 class UserManage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            visible: false,
             columns: [
                 {
                     title: '用户头像',
@@ -48,9 +100,9 @@ class UserManage extends React.Component {
                     key: 'operation',
                     render: () => (
                         <span>
-                            <a href="javascript:;" className='fix'>修改信息</a>
+                            <span onClick={showUpdateConfirm} className='fix'>修改信息</span>
                             <Divider type="vertical" />
-                            <a href="javascript:;" className='delete'>删除</a>
+                            <span onClick={showDeleteConfirm} className='delete'>删除</span>
                         </span>)
                 },
             ],
@@ -84,6 +136,12 @@ class UserManage extends React.Component {
                 },],
         }
     }
+    testRef=(ref)=>{
+        this.child = ref;
+    }
+    showChildModal = ()=>{
+        this.child.showModal();
+    }
     render() {
         const rowSelection = {
             onChange: (selectedRowKeys, selectedRows) => {
@@ -101,9 +159,11 @@ class UserManage extends React.Component {
                     <div>
                         用户列表
                     </div>
+                    <AddUser onRef={this.testRef}/>
+                    
                     <div className='userBtns'>
-                        <Button type="primary" icon="download" size={30}>导出</Button>
-                        <Button type="primary" icon="plus-circle" className='adduser'>添加</Button>
+                        <Button type="primary" icon="download" size={30} >导出</Button>
+                        <Button type="primary" icon="plus-circle" className='adduser' onClick={this.showChildModal}>添加</Button>
                         <Button type="danger" size={30}> 重置</Button>
 
                     </div>

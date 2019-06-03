@@ -1,6 +1,25 @@
-import { Icon, List, Button } from 'antd';
+import { Icon, List, Button,Modal} from 'antd';
 import React from 'react';
 import './message.css'
+
+const confirm = Modal.confirm;
+
+function showDeleteConfirm() {
+    confirm({
+      title: '你想要删除此推送吗?',
+      content: 'Some descriptions',
+      okText: 'Yes',
+      okType: 'danger',
+      cancelText: 'No',
+      onOk() {
+        console.log('OK');
+      },
+      onCancel() {
+        console.log('Cancel');
+      },
+    });
+  }
+
 class MessageItem extends React.Component {
     constructor(props) {
         super(props)
@@ -49,7 +68,7 @@ class MessageItem extends React.Component {
                                     <img width={200} height={100} alt="logo" src={require('./img/message.jpg')} />
                                     <div className='operation'>
                                         <Button type="primary" icon="copy" className='copy'>复制</Button>
-                                        <Button type="danger" icon="delete" className='delete'>删除</Button>
+                                        <Button type="danger" icon="delete" className='delete' onClick={showDeleteConfirm} >删除</Button>
                                     </div>
 
                                 </div>

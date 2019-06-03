@@ -1,6 +1,8 @@
 import React from 'react';
 import './edit-message.css'
-import { Upload, Drawer, Form, Button, Col, Row, Input, Icon,message } from 'antd'
+import { Upload, Drawer, Form, Button, Col, Row, Input, Icon,message,Modal } from 'antd'
+
+
 class Edit extends React.Component {
     constructor(props) {
         super(props);
