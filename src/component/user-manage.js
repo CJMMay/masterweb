@@ -6,16 +6,12 @@ import AddUser from './modals/add-user.js';
 
 const confirm = Modal.confirm;
 function showUpdateConfirm() {
-    confirm({
-      title: '你想要修改信息吗?',
-      content: 'Some descriptions',
-      onOk() {
-        console.log('OK');
-      },
-      onCancel() {
-        console.log('Cancel');
-      },
-    });
+    return(
+        // <UpdateUser />
+        <div>
+            
+        </div>
+    )
   }
   
   function showDeleteConfirm() {
@@ -160,7 +156,6 @@ class UserManage extends React.Component {
                         用户列表
                     </div>
                     <AddUser onRef={this.testRef}/>
-                    
                     <div className='userBtns'>
                         <Button type="primary" icon="download" size={30} >导出</Button>
                         <Button type="primary" icon="plus-circle" className='adduser' onClick={this.showChildModal}>添加</Button>

@@ -10,7 +10,7 @@ import FileManage from './file-manage.js'
 import MessageEdit from './message-edit.js';
 import EssayManage from './essay-manage.js';
 import ClockManage from './clock-manage.js';
-
+import Information from './platform-information.js'
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
@@ -66,7 +66,8 @@ class Home extends React.Component {
                                 </Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub3" title={<span><Icon type="setting" />设置</span>}>
-                                <Menu.Item key="8">平台信息</Menu.Item>
+                                <Menu.Item key="8"> <Link to="/Home/Information"> 平台信息</Link>
+                                </Menu.Item>
                             </SubMenu>
                         </Menu>
                     </Sider>
@@ -82,7 +83,7 @@ class Home extends React.Component {
                             <Route path="/Home/ClockManage"  component={ClockManage} />
                             <Route path="/Home/FileManage"  component={FileManage} />
                             <Route path="/Home/MessageEdit"  component={MessageEdit} /> 
-                             
+                            <Route path="/Home/Information"  component={Information} /> 
                         </Content>
                     </Layout>
                 </Layout>

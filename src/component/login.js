@@ -19,9 +19,10 @@ class Login extends  Component {
         }
         render() {
           return (
-            <div>
+            <div className='login-g'>
+            <div className='login-body'>
               <div className="login-logo">
-                  <img className="logo-pic"></img>
+                  <img src="" alt="" className='logo-pic'/>
               </div>
               <Form onSubmit={this.handleSubmit} className="login-form">
               <Form.Item className="login-form-row">
@@ -49,8 +50,9 @@ class Login extends  Component {
               </Form.Item>
             </Form>
             </div>
+           </div>
         );
-          }
+          } 
       }
     
       
