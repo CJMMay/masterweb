@@ -8,7 +8,7 @@ class Head extends React.Component {
                 <Breadcrumb className='head-name'>
                     <Breadcrumb.Item>统计</Breadcrumb.Item>
                     <Breadcrumb.Item>
-                        <a href="">用户分析</a>
+                        <a href="/">用户分析</a>
                     </Breadcrumb.Item>
                 </Breadcrumb>
             </div>

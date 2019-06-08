@@ -12,7 +12,6 @@ for (let i = 0; i < 30; i++) {
         personal: '这个人很懒，没有个性签名',
     });
 }
-console.log(data);
 const EditableContext = React.createContext();
 
 class EditableCell extends React.Component {
