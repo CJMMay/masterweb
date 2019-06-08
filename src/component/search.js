@@ -10,7 +10,7 @@ class Search extends React.Component {
                     <Input placeholder="" className='search-input'/>
                     <div className='search-right'>
                         <span className='search-page'>每页显示</span>
-                        <InputNumber min={1} max={10} defaultValue={5} onChange='' className='showNum'/>
+                        <InputNumber min={1} max={10} defaultValue={5}  className='showNum'/>
                         <Button type="primary" icon="search" className='search-but'>搜索</Button>
                     </div>
                 </div>

@@ -12,7 +12,6 @@ class Data extends React.Component {
                 )
             })
         )
-
     }
     render() {
         let title = this.props.title, subtitle = this.props.subtitle, list = this.props.list;

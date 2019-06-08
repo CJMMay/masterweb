@@ -76,8 +76,7 @@ class Home extends React.Component {
                             background: '#fff', padding: 24, margin: 0, minHeight: 280,
                         }}>
                            <Route path="/Home/" exact component={UserAna} />
-                            <Route path="/Home/ContAna"  component={ContAna} />
-                            
+                            <Route path="/Home/ContAna" component={ContAna} />
                             <Route path="/Home/UserManage"  component={UserManage} />
                             <Route path="/Home/EssayManage"  component={EssayManage} />
                             <Route path="/Home/ClockManage"  component={ClockManage} />

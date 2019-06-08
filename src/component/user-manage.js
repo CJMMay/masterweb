@@ -1,18 +1,11 @@
 import React from 'react';
+import EditableTable from './table.js'
 import { Table, Divider, Button,Modal } from 'antd'
 import './user-manage.css';
 import Search from './search.js';
 import AddUser from './modals/add-user.js';
-
+import UpdateUser from './modals/updateUser.js'
 const confirm = Modal.confirm;
-function showUpdateConfirm() {
-    return(
-        // <UpdateUser />
-        <div>
-            
-        </div>
-    )
-  }
   
   function showDeleteConfirm() {
     confirm({
@@ -70,17 +63,21 @@ class UserManage extends React.Component {
                     render: text => <a href="javascript:;">{text}</a>,
                 },
                 {
-                    title: '手机号',
-                    dataIndex: 'telephone',
-                    key: 'telephone',
+                    title: '邮箱',
+                    dataIndex: 'email',
+                    key: 'email',
                 },
                 {
-                    title: '帖子条数',
-                    dataIndex: 'post_num',
-                    key: 'post_num',
-                    defaultSortOrder: 'descend',
-                    sorter: (a, b) => a.post_num - b.post_num,
-                }, {
+                    title: '考试年份',
+                    dataIndex: 'testYear',
+                    key: 'testYear',
+                },
+                {
+                    title: '目标院校',
+                    dataIndex: 'goalSchool',
+                    key: 'goalSchool',
+                },
+                {
                     title: '注册时间',
                     dataIndex: 'register_time',
                     key: 'register_time',
@@ -94,10 +91,9 @@ class UserManage extends React.Component {
                     title: '操作',
                     dataIndex: 'operation',
                     key: 'operation',
-                    render: () => (
+                    render: (record) => (
                         <span>
-                            <span onClick={showUpdateConfirm} className='fix'>修改信息</span>
-                            <Divider type="vertical" />
+                            <UpdateUser />
                             <span onClick={showDeleteConfirm} className='delete'>删除</span>
                         </span>)
                 },
@@ -107,36 +103,34 @@ class UserManage extends React.Component {
                     key: '1',
                     // userimg:"./img/userimg.jpg",
                     username: 'chenjiaemi',
-                    telephone: '15990020548',
-                    post_num: 30,
+                    email: '1029187145@qq.com',
+                    testYear:'2020',
+                    goalSchool:'杭州师范大学',
                     register_time: '2019-1-1',
                     personal: '这个人很懒，没有个性签名',
                 },
                 {
                     key: '2',
                     // userimg:"./img/userimg.jpg",
-                    username: 'xuweiy',
-                    telephone: '15990020548',
-                    post_num: 0,
+                    username: 'chenjiaemi',
+                    email: '1029187145@qq.com',
+                    testYear:'2020',
+                    goalSchool:'杭州师范大学',
+                   
                     register_time: '2019-1-1',
                     personal: '这个人很懒，没有个性签名',
                 },
                 {
                     key: '3',
                     // userimg:"./img/userimg.jpg",
-                    username: 'zhangzhuohui',
-                    telephone: '15990020548',
-                    post_num: 15,
+                    username: 'chenjiaemi',
+                    email: '1029187145@qq.com',
+                    testYear:'2020',
+                    goalSchool:'杭州师范大学',
                     register_time: '2019-1-1',
                     personal: '这个人很懒，没有个性签名',
                 },],
         }
-    }
-    testRef=(ref)=>{
-        this.child = ref;
-    }
-    showChildModal = ()=>{
-        this.child.showModal();
     }
     render() {
         const rowSelection = {
@@ -155,15 +149,16 @@ class UserManage extends React.Component {
                     <div>
                         用户列表
                     </div>
-                    <AddUser onRef={this.testRef}/>
                     <div className='userBtns'>
-                        <Button type="primary" icon="download" size={30} >导出</Button>
-                        <Button type="primary" icon="plus-circle" className='adduser' onClick={this.showChildModal}>添加</Button>
-                        <Button type="danger" size={30}> 重置</Button>
+                        <Button type="primary" icon="download">导出</Button>
+                        {/* <Button type="primary" icon="plus-circle" className='adduser' onClick={this.showChildModal}>添加</Button> */}
+                        <AddUser />
+                        <Button type="danger" > 重置</Button>
 
                     </div>
                 </div>
-                <Table rowSelection={rowSelection} columns={this.state.columns} dataSource={this.state.data} />
+                {/* <Table rowSelection={rowSelection} columns={this.state.columns} dataSource={this.state.data} /> */}
+                <EditableTable />
             </div>
         )
     }
